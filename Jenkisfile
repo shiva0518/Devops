@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Pull source code from GitHub repository
+                git url: ‘https://github.com/shiva0518/Devops.git', branch: 'main'
+
+                // Copy code to web server path
+                sh 'sudo cp -r ./* /var/www/html/'
+            }
+        }
+
+         stage('Get URL') {
+            steps {
+                // Retrieve the URL of your application
+                // Replace this with the command to get the URL of your application
+                 echo "http://52.64.204.214/index.html" 
+            }
+        }
+    }
+}
