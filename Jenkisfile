@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Pull source code from GitHub repository
-                git url: ‘https://github.com/shiva0518/Devops.git', branch: 'main'
+                git url: 'https://github.com/shiva0518/Devops.git', branch: 'main'
 
                 // Copy code to web server path
                 sh 'sudo cp -r ./* /var/www/html/'
